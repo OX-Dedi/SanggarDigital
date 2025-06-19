@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('bgori1.png') center/cover no-repeat, linear-gradient(270deg, #3b82f6, #d69dff, #71a1ff);
+  background-blend-mode: overlay;
+  animation: gradientShift 20s infinite linear;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.main-container {
+  display: flex;
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.tab-nav {
+  display: flex;
+  flex-direction: column;
+  background: #1e40af;
+  padding: 1rem;
+  border-right: 1px solid #ccc;
+  min-width: 140px;
+}
+
+.tab-btn {
+  background: transparent;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  background: #2563eb;
+}
+
+.card-container {
+  flex: 1;
+  padding: 2rem;
+  position: relative;
+}
+
+.card-content {
+  display: none;
+  animation: fade 0.4s ease;
+}
+
+.card-content.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2 {
+  color: #2563eb;
+  margin-bottom: 1.5rem;
+}
+
+.info-grid {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.info-grid div {
+  background: #f1f5f9;
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1 1 150px;
+  min-width: 150px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  color: #1e293b;
+}
+
+.info-grid strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2563eb;
+  font-size: 1.1rem;
+}
+
+.card-content p {
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #374151;
+  white-space: pre-line;
+}
+
+a.back {
+  display: inline-block;
+  margin-top: 2rem;
+  background: #3b82f6;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+  transition: all 0.3s ease;
+}
+
+a.back:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}

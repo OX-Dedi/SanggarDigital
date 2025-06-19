@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: 
+      radial-gradient(circle at 20% 20%, #7dd3fc88, transparent 40%),
+      radial-gradient(circle at 80% 80%, #2563eb88, transparent 40%),
+      linear-gradient(135deg, #1e40af, #2563eb);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 15px 60px;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+
+  .container {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 25px;
+    max-width: 480px;
+    width: 100%;
+    padding: 45px 40px 55px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: slideUp 0.7s ease forwards;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  h2 {
+    font-weight: 300;
+    font-size: 1rem;
+    margin: 10 10 10px;
+    color: #dbeafe;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(21, 101, 192, 0.8);
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-radius: 90px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.2);
+    user-select: none;
+  }
+
+  .tab-btn {
+    flex: 1;
+    padding: 16px 0;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    background: transparent;
+    color: #bbdefb;
+    transition: 
+      background-color 0.4s ease, 
+      color 0.4s ease, 
+      box-shadow 0.3s ease;
+    user-select: none;
+  }
+  .tab-btn.active {
+    background: #2563eb;
+    color: #e0e7ff;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.85);
+  }
+  .tab-btn:hover:not(.active) {
+    background: rgba(37, 99, 235, 0.3);
+    color: #dbeafe;
+  }
+
+  .tab-content {
+    display: none;
+    animation: fadeContent 0.5s ease forwards;
+  }
+  .tab-content.active {
+    display: block;
+  }
+  @keyframes fadeContent {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="file"] {
+    width: 100%;
+    padding: 16px 20px;
+    margin: 10px 0 20px;
+    border-radius: 20px;
+    border: 2px solid rgba(219, 234, 254, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+    color: #e0e7ff;
+    font-size: 1rem;
+    outline-offset: 3px;
+    transition: 
+      border-color 0.3s ease,
+      background-color 0.3s ease,
+      color 0.3s ease;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.1);
+  }
+  input[type="text"]::placeholder,
+  input[type="email"]::placeholder,
+  input[type="password"]::placeholder {
+    color: #dbeafeaa;
+  }
+  input[type="file"] {
+    padding: 10px 12px;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="file"]:focus {
+    border-color: #93c5fd;
+    background: rgba(255, 255, 255, 0.35);
+    color: #1e3a8a;
+    outline: none;
+    box-shadow: 0 0 8px #93c5fdaa;
+  }
+
+  button {
+    cursor: pointer;
+    padding: 16px 28px;
+    border: none;
+    border-radius: 50px;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.7);
+    transition: 
+      background-color 0.4s ease, 
+      box-shadow 0.4s ease;
+    user-select: none;
+    margin-top: 10px;
+    min-width: 140px;
+    display: inline-block;
+  }
+  button:hover {
+    background-color: #1e40af;
+    box-shadow: 0 14px 38px rgba(30, 64, 175, 0.85);
+  }
+
+  .back-btn {
+    background-color: #64748b;
+    margin-right: 10px;
+    box-shadow: 0 8px 26px rgba(100, 116, 139, 0.5);
+  }
+  .back-btn:hover {
+    background-color: #475569;
+    box-shadow: 0 10px 30px rgba(71, 85, 105, 0.65);
+  }
+
+  .error {
+    color: #f87171;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 0 5px #b91c1caa;
+  }
+
+  .profile-photo {
+    display: block;
+    margin: 0 auto 10px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #93c5fdaa;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .profile-photo:hover {
+    transform: scale(1.15) rotate(4deg);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.85);
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  @media (max-width: 540px) {
+    .container {
+      padding: 35px 25px 45px;
+    }
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    button {
+      font-size: 0.5rem;
+      min-width: 120px;
+      padding: 14px 24px;
+    }
+  }
